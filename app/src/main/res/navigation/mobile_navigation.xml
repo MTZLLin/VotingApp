@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.myanmarit.votingapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_king"
+        android:name="com.myanmarit.votingapp.ui.king.KingFragment"
+        android:label="@string/King"
+        tools:layout="@layout/fragment_king" >
+        <action
+            android:id="@+id/action_navigation_king_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_queen"
+        android:name="com.myanmarit.votingapp.ui.queen.QueenFragment"
+        android:label="@string/Queen"
+        tools:layout="@layout/fragment_queen" >
+        <action
+            android:id="@+id/action_navigation_queen_to_queenDetailFragment"
+            app:destination="@id/queenDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.myanmarit.votingapp.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="item"
+            app:argType="com.myanmarit.votingapp.model.KingQueenItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/queenDetailFragment"
+        android:name="com.myanmarit.votingapp.ui.detail.QueenDetailFragment"
+        android:label="fragment_queen_detail"
+        tools:layout="@layout/fragment_queen_detail" />
+</navigation>
