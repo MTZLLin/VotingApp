@@ -25,8 +25,8 @@ class KingQueenAdapter: RecyclerView.Adapter<KingQueenAdapter.KingQueenViewHolde
         fun bind(kingQueenItem: KingQueenItem){
             this.item = kingQueenItem
             Picasso.get()
-                .load(kingQueenItem.image)
-                .placeholder(R.drawable.ic_launcher_background)
+                .load("http://voting-monywa.dsv.hoz.mybluehost.me/image/"+kingQueenItem.image)
+                //.placeholder(R.drawable.ic_launcher_background)
                 .into(itemView.imgKingQueen)
 
             itemView.name.text = kingQueenItem.name

@@ -36,8 +36,8 @@ class DetailFragment : Fragment() {
         detailName.text = item.name
         detailClassName.text = item.className
         Picasso.get()
-            .load(item.image)
-            .placeholder(R.drawable.ic_launcher_background)
+            .load("http://voting-monywa.dsv.hoz.mybluehost.me/image/"+item.image)
+            //.placeholder(R.drawable.ic_launcher_background)
             .into(voteImage)
 
         btnSubmit.setOnClickListener {

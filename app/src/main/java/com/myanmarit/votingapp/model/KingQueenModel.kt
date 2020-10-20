@@ -9,7 +9,9 @@ data class KingQueenModel(
 	@field:SerializedName("data")
 	val kingQueenList: List<KingQueenItem?>? = null
 )
+
 @Parcelize
+
 data class KingQueenItem(
 
 	@field:SerializedName("image")
@@ -36,3 +38,4 @@ data class KingQueenItem(
 	@field:SerializedName("vote_count")
 	val voteCount: Int? = null
 ): Parcelable
+

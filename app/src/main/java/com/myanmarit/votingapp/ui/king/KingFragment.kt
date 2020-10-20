@@ -13,8 +13,12 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.myanmarit.votingapp.R
 import com.myanmarit.votingapp.model.KingQueenItem
+import com.myanmarit.votingapp.model.KingQueenModel
 import com.myanmarit.votingapp.ui.adapter.KingQueenAdapter
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_detail.*
 import kotlinx.android.synthetic.main.fragment_king.*
+import kotlinx.android.synthetic.main.item_king_queen.*
 
 class KingFragment : Fragment(),KingQueenAdapter.OnClickListener {
 
@@ -41,8 +45,15 @@ class KingFragment : Fragment(),KingQueenAdapter.OnClickListener {
     }
     kingAdapter.setOnClickListener(this)
 
-    kingViewModel.getKing().observe(viewLifecycleOwner, Observer {king ->
+    kingViewModel.getKing().observe(
+      viewLifecycleOwner, Observer {king ->
       kingAdapter.addKingQueen(king.kingQueenList as List<KingQueenItem>)
+       // name.text = it.kingQueenList.name
+       // className.text = it.kingQueenList.className
+
+       // Picasso.get()
+       // .load("http://voting-monywa.dsv.hoz.mybluehost.me"+ king.kingQueenList as List<KingQueenItem>)
+       // .into(imgKingQueen)
     })
   }
 
