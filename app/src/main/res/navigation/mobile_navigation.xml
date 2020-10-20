@@ -27,8 +27,8 @@
         android:label="@string/Queen"
         tools:layout="@layout/fragment_queen" >
         <action
-            android:id="@+id/action_navigation_queen_to_queenDetailFragment"
-            app:destination="@id/queenDetailFragment" />
+            android:id="@+id/action_navigation_queen_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -39,9 +39,4 @@
             android:name="item"
             app:argType="com.myanmarit.votingapp.model.KingQueenItem" />
     </fragment>
-    <fragment
-        android:id="@+id/queenDetailFragment"
-        android:name="com.myanmarit.votingapp.ui.detail.QueenDetailFragment"
-        android:label="fragment_queen_detail"
-        tools:layout="@layout/fragment_queen_detail" />
 </navigation>

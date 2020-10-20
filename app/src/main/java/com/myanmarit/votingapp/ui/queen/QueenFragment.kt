@@ -4,19 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.myanmarit.votingapp.R
 import com.myanmarit.votingapp.model.KingQueenItem
 import com.myanmarit.votingapp.ui.adapter.KingQueenAdapter
-import com.myanmarit.votingapp.ui.king.KingFragmentDirections
-import com.myanmarit.votingapp.ui.king.KingViewModel
-import kotlinx.android.synthetic.main.fragment_king.*
 import kotlinx.android.synthetic.main.fragment_queen.*
 
 class QueenFragment : Fragment(),KingQueenAdapter.OnClickListener {
@@ -54,7 +49,7 @@ class QueenFragment : Fragment(),KingQueenAdapter.OnClickListener {
   }
 
   override fun onClick(item: KingQueenItem) {
-    val directions = KingFragmentDirections.actionNavigationKingToDetailFragment(item)
+     val directions = QueenFragmentDirections.actionNavigationQueenToDetailFragment(item)
     view?.findNavController()?.navigate(directions)
   }
 }
